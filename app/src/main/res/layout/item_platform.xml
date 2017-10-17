@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+                android:id="@+id/platform_item_layotu"
+    android:background="@drawable/bg_home_item2"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                >
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/itme_iv_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        />
+    <TextView
+        android:layout_centerInParent="true"
+        android:textSize="12sp"
+        android:id="@+id/itme_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="聚币"
+        android:textColor="@color/black"
+        android:layout_below="@+id/itme_iv_logo"/>
+</RelativeLayout>

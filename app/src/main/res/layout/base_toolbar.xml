@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/toolbar_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="?actionBarSize"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                tools:layout_height="?actionBarSize">
+
+    <TextView
+        android:id="@+id/actionbar_lift"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="36dp"
+        android:drawableLeft="@drawable/icon_nav_back"
+        android:drawableStart="@drawable/icon_nav_back"
+        android:textColor="@color/primaryTextColor"
+        android:gravity="center"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/actionbar_center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/primaryTextColor"
+        tools:text="比特币先手"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/actionbar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textColor="@color/primaryTextColor"
+        tools:text="菜单"
+        android:textSize="18sp"
+        />
+</RelativeLayout>

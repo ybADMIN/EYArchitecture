@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:color/white"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.yb.btcinfo.main.DashboradFragment">
+
+  <!--<android.support.v7.widget.RecyclerView-->
+      <!--android:id="@+id/rv_download"-->
+      <!--android:layout_width="match_parent"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--app:layoutManager="android.support.v7.widget.LinearLayoutManager"-->
+      <!--tools:listitem="@layout/item_dashborad"-->
+      <!--/>-->
+  <include android:id="@+id/single_download" layout="@layout/item_dashborad"/>
+  <TextView
+      android:scrollbars="vertical"
+      android:layout_below="@+id/single_download"
+      android:id="@+id/downloadContent"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@+id/button"/>
+  <Button
+      android:textAllCaps="false"
+      android:layout_alignParentBottom="true"
+      android:text="多线程多任务"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:id="@+id/button"/>
+</RelativeLayout>

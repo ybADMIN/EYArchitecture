@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yb.btcinfo.main.MainActivity">
+    <ImageView
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:divider="@color/gray_DAE2E5"
+        android:showDividers="end"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <include
+                layout="@layout/base_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"/>
+        </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tl_1"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/white"
+            android:paddingTop="3dp"
+            app:tl_divider_width="0dp"
+            app:tl_iconHeight="28dp"
+            app:tl_iconMargin="0dp"
+            app:tl_iconWidth="28dp"
+            app:tl_indicator_height="0dp"
+            app:tl_textAllCaps="true"
+            app:tl_textSelectColor="@color/colorPrimary"
+            app:tl_textUnselectColor="#989898"
+            app:tl_textsize="12sp"
+            app:tl_underline_height="0dp" />
+    </LinearLayout>
+</FrameLayout>

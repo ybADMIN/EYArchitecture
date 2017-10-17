@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    def baseDependencies = rootProject.ext.baseDependencies
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile baseDependencies.logger
+    compile baseDependencies.rxJava
+    compile baseDependencies.okHttp
+    compile baseDependencies.retrofit
+    compile baseDependencies.loggerInterceptor
+    compile baseDependencies.adapterRxjava
+    compile baseDependencies.gson
+    compile baseDependencies.rxAndroid
+    compile baseDependencies.androidAnnotations
+    compile baseDependencies.rxCache
+    compile baseDependencies.rxCacheToGson
+    compile baseDependencies.glide
+    annotationProcessor baseDependencies.glidecompiler
+    provided baseDependencies.v4compat
+    provided baseDependencies.recyclerView
+    compile baseDependencies.glideIntegration
+}

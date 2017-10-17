@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ILibray</string>
+    <string name="exception_message_generic">There was an application error</string>
+    <string name="exception_message_network_connError">Server connection failure</string>
+</resources>

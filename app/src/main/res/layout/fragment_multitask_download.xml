@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:color/white"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.yb.btcinfo.main.DashboradFragment">
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_download"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+      tools:listitem="@layout/item_dashborad"
+      android:layout_above="@+id/downloadAll"
+      />
+  <Button
+      android:id="@+id/downloadAll"
+      android:layout_alignParentBottom="true"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="下载全部"/>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="8dp"
+              android:paddingStart="16dp"
+              android:paddingLeft="16dp"
+              android:paddingEnd="16dp"
+              android:paddingRight="16dp"
+              android:background="@drawable/bg_list_item2"
+              android:orientation="vertical">
+    <TextView
+        android:id="@+id/item_platform_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_8D999E"
+        android:textSize="12sp"
+        tools:text="2017-09-08 11:15:01"/>
+    <TextView
+        android:id="@+id/item_platform_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="9月8日时代币分币公告"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/item_platform_descript_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:text="详情:"
+            android:textColor="#2c2c2c"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/item_platform_url_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/item_platform_descript_tv"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toEndOf="@+id/item_platform_descript_tv"
+            android:layout_toRightOf="@+id/item_platform_descript_tv"
+            android:autoLink="email|phone|web"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:linksClickable="false"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorLink="#95c7fa"
+            android:textSize="12sp"
+            tools:text="http://www.baidu.com"/>
+    </RelativeLayout>
+</LinearLayout>

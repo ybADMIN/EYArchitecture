@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/primaryColor</color>
+    <color name="colorPrimaryDark">@color/primaryDarkColor</color>
+    <color name="colorAccent">@color/secondaryLightColor</color>
+    <color name="windows_background">#f0f4f7</color>
+    <color name="text_title">#ECEFF1</color>
+    <color name="text_subtitle">#CFD8DC</color>
+
+    <color name="primaryColor">#262834</color>
+    <color name="primaryLightColor">#4e505e</color>
+    <color name="primaryDarkColor">#00000e</color>
+    <color name="secondaryColor">#262834</color>
+    <color name="secondaryLightColor">#4e505e</color>
+    <color name="secondaryDarkColor">#00000e</color>
+    <color name="primaryTextColor">#d7b883</color>
+    <color name="secondaryTextColor">#ffffff</color>
+
+    //基础颜色
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="blue_396A8E">#396A8E</color>
+    <color name="blue_38B6FF">#38B6FF</color>
+    <color name="blue_2877C6">#2877C6</color>
+    <color name="gray_8D999E">#8D999E</color>
+    <color name="gray_34383B">#34383B</color>
+    <color name="gray_666666">#666666</color>
+    <color name="gray_DAE2E5">#DAE2E5</color>
+    <color name="gray_B7C8CF">#B7C8CF</color>
+    <color name="gray_8D8D8D">#8D8D8D</color>
+    <color name="red_FE2E2E">#FE2E2E</color>
+    <color name="green_33E670">#33E670</color>
+    <color name="green_3DDEB4">#3ddeb4</color>
+    <color name="violet_5139FF">#5139FF</color>
+    <color name="yellow_FEB238">#FEB238</color>
+    <color name="yellow_D68E5E">#5139FF</color>
+
+</resources>

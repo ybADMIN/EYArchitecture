@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+    </style>
+    <!--activity默认主题 没有Actionbar-->
+    <style name="AppBaseTheme" parent="AppTheme">
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/windows_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="toolbarStyle">@style/AppBaseTheme.Toolbar</item>
+    </style>
+
+    <style name="AppBaseTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
+    </style>
+
+
+    <style
+        name="customDialog"
+        parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <!--<style name="customDialog.Dialog_FS" parent="customDialog">-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:windowAnimationStyle">@style/menupopwindow_anim_style</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:backgroundDimEnabled">true</item>-->
+        <!--<item name="android:backgroundDimAmount">0.6</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;Pop菜单显示和隐藏动画&ndash;&gt;-->
+    <!--<style name="menupopwindow_anim_style">-->
+        <!--<item name="android:windowEnterAnimation">@anim/popup_flyout_show</item>-->
+        <!--&lt;!&ndash; 指定显示的动画xml &ndash;&gt;-->
+
+        <!--<item name="android:windowExitAnimation">@anim/popup_flyout_hide</item>-->
+        <!--&lt;!&ndash; 指定消失的动画xml &ndash;&gt;-->
+    <!--</style>-->
+
+</resources>
