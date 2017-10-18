@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.yb.btcinfo.R;
-import mvp.presenter.Presenter;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import mvp.presenter.Presenter;
+import mvp.presenter.PresenterBulide;
+import mvp.view.BaseView;
 
 /**
  * Created by ericYang on 2017/5/26.
@@ -49,8 +51,20 @@ public abstract class BaseFragment<P extends Presenter> extends Fragment {
         return mBasePresenter;
     }
 
-    public void setBasePresenter(P basePresenter) {
-        mBasePresenter = basePresenter;
+    @SuppressWarnings("unchecked")
+    public void setBasePresenter() {
+        try {
+            mBasePresenter = PresenterBulide.newPresenterInstance(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            if (mBasePresenter!=null){
+                mBasePresenter.setView((BaseView) this);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Nullable
@@ -73,7 +87,7 @@ public abstract class BaseFragment<P extends Presenter> extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setBasePresenter(configPresenter());
+        setBasePresenter();
         if (mIsAutoinitViewData) {
             mIsAutoinitViewData = false;
             initView(view);
@@ -104,7 +118,6 @@ public abstract class BaseFragment<P extends Presenter> extends Fragment {
 
     }
 
-    public abstract P configPresenter();
 
     protected void initView(View view) {
     }

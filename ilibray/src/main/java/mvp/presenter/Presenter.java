@@ -4,18 +4,15 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import mvp.view.BaseView;
-
 import java.lang.ref.WeakReference;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import mvp.view.BaseView;
 
 public abstract class Presenter<V extends BaseView> {
-    public Presenter(V view) {
-        mWBaseView = new WeakReference<V>(view);
+    public Presenter() {
     }
-
     public V getView() {
         if (mWBaseView != null && mWBaseView.get() != null) {
             return mWBaseView.get();

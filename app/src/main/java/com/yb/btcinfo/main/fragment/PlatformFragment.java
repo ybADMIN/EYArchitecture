@@ -18,7 +18,6 @@ import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseFragment;
 import com.yb.btcinfo.main.model.PlatformModel;
 import com.yb.btcinfo.platform.PlatformMsgActivity;
-import mvp.data.store.glide.GlideApp;
 import com.yb.ilibray.utils.DisplayUtil;
 import com.yb.ilibray.utils.DividerGridItemDecoration;
 import com.yb.ilibray.utils.data.assist.Check;
@@ -26,6 +25,7 @@ import com.yb.ilibray.utils.data.assist.Check;
 import java.util.List;
 
 import butterknife.BindView;
+import mvp.data.store.glide.GlideApp;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,11 +67,6 @@ public class PlatformFragment extends BaseFragment<PlatfromPresenter> implements
         return R.layout.fragment_platform_layout;
     }
 
-
-    @Override
-    public PlatfromPresenter configPresenter() {
-        return new PlatfromPresenter(this);
-    }
 
 
     @Override

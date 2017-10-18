@@ -67,11 +67,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     }
 
 
-    @Override
-    public HomePresenter configPresenter() {
-        return new HomePresenter(this);
-    }
-
 
     @Override
     protected void initView(View view) {

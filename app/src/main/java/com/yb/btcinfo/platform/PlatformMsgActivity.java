@@ -36,10 +36,6 @@ public class PlatformMsgActivity extends BaseActivity<PlatformMsgPresenter> impl
         return R.layout.activity_platform_msg;
     }
 
-    @Override
-    public PlatformMsgPresenter configPresenter() {
-        return new PlatformMsgPresenter(this);
-    }
 
     @Override
     protected void initView() {

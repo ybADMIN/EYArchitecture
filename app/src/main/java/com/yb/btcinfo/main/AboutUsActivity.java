@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseActivity;
-import mvp.presenter.Presenter;
 
 public class AboutUsActivity extends BaseActivity {
 
@@ -30,10 +29,6 @@ public class AboutUsActivity extends BaseActivity {
         getSimpleToolBar().getToolbar().setNavigationOnClickListener(v -> onBackPressed());
     }
 
-    @Override
-    public Presenter configPresenter() {
-        return null;
-    }
 
     @Override
     public void onActionBarClick(View view) {

@@ -43,7 +43,7 @@ public class ResourceManager {
         mUserCacheProviders = UserCacheProviders.Factory.createProviders(context);
 
         navigator = new Navigator();
-        Logger.init(ResourceManager.class.getSimpleName()).logLevel(BuildConfig.DEBUG?LogLevel.FULL:LogLevel.NONE).hideThreadInfo().methodCount(0);
+        Logger.init("EYArch").logLevel(BuildConfig.DEBUG?LogLevel.FULL:LogLevel.NONE).hideThreadInfo().methodCount(0);
     }
 
     public static ResourceManager getInstance() {

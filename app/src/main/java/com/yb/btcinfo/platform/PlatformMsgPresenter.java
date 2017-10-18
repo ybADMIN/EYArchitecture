@@ -17,8 +17,7 @@ import mvp.presenter.Presenter;
 public class PlatformMsgPresenter extends Presenter<PlatformMsgView> {
     private final MainRepostiory mRepository;
 
-    public PlatformMsgPresenter(PlatformMsgView view) {
-        super(view);
+    public PlatformMsgPresenter() {
         this.mRepository = (MainRepostiory) RepositoryManager.getInstance().getRepositorys(RepositoryManager.DEFAULTREPOSITORY);
     }
     public void getPlatformNews(String id){

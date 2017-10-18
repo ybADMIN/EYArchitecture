@@ -14,10 +14,12 @@ import com.yb.btcinfo.common.manager.ActivitManager;
 import com.yb.btcinfo.common.manager.ResourceManager;
 import com.yb.btcinfo.common.navigation.Navigator;
 import com.yb.btcinfo.common.widget.SimpleToolBar;
-import mvp.presenter.Presenter;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import mvp.presenter.Presenter;
+import mvp.presenter.PresenterBulide;
+import mvp.view.BaseView;
 
 
 /**
@@ -63,7 +65,7 @@ public abstract class BaseActivity<P extends Presenter> extends AppCompatActivit
         if (0 != getLayoutId()) {
             setContentView(getLayoutId());
         }
-        setPresenter(configPresenter());
+        setPresenter();
         mUnbinder = ButterKnife.bind(this);
         if (OSUtils.isEMUI3_1() && isImmersionBarEnabled()) {
             //第一种
@@ -76,10 +78,6 @@ public abstract class BaseActivity<P extends Presenter> extends AppCompatActivit
 
     protected abstract int getLayoutId();
 
-    /**
-     * 配置Presenter
-     */
-    public abstract P configPresenter();
 
     /**
      * 初始化界面
@@ -176,8 +174,22 @@ public abstract class BaseActivity<P extends Presenter> extends AppCompatActivit
         }
     }
 
-    public void setPresenter(P presenter) {
-        mBasePresenter = presenter;
+    @SuppressWarnings("unchecked")
+    public void setPresenter() {
+
+        try {
+            mBasePresenter = PresenterBulide.newPresenterInstance(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (mBasePresenter!=null){
+                mBasePresenter.setView((BaseView) this);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isSimpleToolbarEnable() {

@@ -14,7 +14,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import mvp.presenter.Presenter;
 
 public class MyFragment extends BaseFragment {
 
@@ -48,10 +47,6 @@ public class MyFragment extends BaseFragment {
         return R.layout.fragment_my;
     }
 
-    @Override
-    public Presenter configPresenter() {
-        return null;
-    }
 
 
     @Override

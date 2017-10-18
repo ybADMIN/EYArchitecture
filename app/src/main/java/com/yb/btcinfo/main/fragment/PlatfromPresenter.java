@@ -18,8 +18,7 @@ public class PlatfromPresenter extends Presenter<PlatfromView> {
     private final MainRepostiory mRepository;
     private UserModelDataMapper mUserModelDataMapper = new UserModelDataMapper();
 
-    public PlatfromPresenter(PlatfromView view) {
-        super(view);
+    public PlatfromPresenter() {
         this.mRepository = (MainRepostiory) RepositoryManager.getInstance().getRepositorys(RepositoryManager.DEFAULTREPOSITORY);
     }
 

@@ -115,7 +115,6 @@ public class PushServiceManager {
             }
         } catch (Exception e){
             e.printStackTrace();
-            return SYS;
         }
         return SYS;
     }

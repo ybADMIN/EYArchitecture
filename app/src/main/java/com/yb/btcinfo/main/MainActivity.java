@@ -26,14 +26,13 @@ import com.yb.btcinfo.main.fragment.HomeFragment.HomeFListener;
 import com.yb.btcinfo.main.fragment.MyFragment;
 import com.yb.btcinfo.main.fragment.PlatformFragment;
 import com.yb.btcinfo.main.model.TabMode;
-import mvp.presenter.Presenter;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 
 
-public class MainActivity extends BaseActivity<Presenter> implements HomeFListener, PlatformFragment.PlatfromFListener {
+public class MainActivity extends BaseActivity implements HomeFListener, PlatformFragment.PlatfromFListener {
     private String[] titles = {"公告", "平台", "我的"};
     private int[] iconUnselectIds = {
             R.drawable.news_normal,
@@ -82,11 +81,6 @@ public class MainActivity extends BaseActivity<Presenter> implements HomeFListen
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
-    }
-
-    @Override
-    public Presenter configPresenter() {
-        return null;
     }
 
     @Override

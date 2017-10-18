@@ -19,8 +19,7 @@ public class HomePresenter extends Presenter<HomeView> {
     private final MainRepostiory mRepository;
     private UserModelDataMapper mUserModelDataMapper = new UserModelDataMapper();
 
-    public HomePresenter(HomeView view) {
-        super(view);
+    public HomePresenter() {
         this.mRepository = (MainRepostiory) RepositoryManager.getInstance().getRepositorys(RepositoryManager.DEFAULTREPOSITORY);
     }
 
