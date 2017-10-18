@@ -4,7 +4,14 @@
              android:layout_height="match_parent"
              xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context="com.yb.btcinfo.main.fragment.HomeFragment">
-
+    <com.yb.ilibray.widgets.ErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ev_retryVisible="false"
+        app:ev_subtitle="数据加载中..."
+        app:ev_titleVisible="false"
+        />
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_ly"
         android:layout_width="match_parent"
@@ -16,5 +23,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </android.support.v4.widget.SwipeRefreshLayout>
-
 </FrameLayout>

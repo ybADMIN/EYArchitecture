@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -18,10 +20,13 @@ import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseFragment;
 import com.yb.btcinfo.main.model.IndexDataModel;
 import com.yb.ilibray.utils.data.assist.Check;
+import com.yb.ilibray.widgets.ErrorView;
 
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import mvp.data.store.glide.GlideApp;
 
 /**
@@ -37,6 +42,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     RecyclerView mHomeRv;
     @BindView(R.id.swipe_ly)
     SwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.errorView)
+    ErrorView mErrorView;
+    Unbinder unbinder;
     private HomeFListener mListener;
 
     public HomeFragment() {
@@ -67,20 +75,20 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     }
 
 
-
     @Override
     protected void initView(View view) {
         if (view == null) return;
         //设置在listview上下拉刷新的监听
-        mSwipeRefreshLayout.setOnRefreshListener(this::initData);
-
-        mHomeRv.setAdapter(new BaseQuickAdapter<IndexDataModel,BaseViewHolder>(R.layout.item_home) {
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+            getBasePresenter().getIndexNews("10");
+        });
+        mHomeRv.setAdapter(new BaseQuickAdapter<IndexDataModel, BaseViewHolder>(R.layout.item_home) {
             @Override
             protected void convert(BaseViewHolder helper, IndexDataModel item) {
                 helper.setText(R.id.item_home_time, Check.checkReplace(item.getTime()))
-                .setText(R.id.item_home_content_tv,Check.checkReplace(Check.checkReplace(item.getUrl())))
-                .setText(R.id.item_home_title_tv,Check.checkReplace(item.getTitle()))
-                .setText(R.id.item_home_platform,Check.checkReplace(item.getPlatform()));
+                        .setText(R.id.item_home_content_tv, Check.checkReplace(Check.checkReplace(item.getUrl())))
+                        .setText(R.id.item_home_title_tv, Check.checkReplace(item.getTitle()))
+                        .setText(R.id.item_home_platform, Check.checkReplace(item.getPlatform()));
                 GlideApp.with(getContext()).load(Check.checkReplace(item.getLogourl())).into((ImageView) helper.getView(R.id.item_home_logo));
             }
         });
@@ -93,22 +101,22 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
                         .showSwipeRefreshLayout(true)
                         .toolbarScrollFlags(0)
                         .webViewSupportZoom(true)
-                        .statusBarColor(ContextCompat.getColor(getActivity(),R.color.primaryDarkColor))
-                        .show(Check.checkReplace(((IndexDataModel)adapter.getData().get(position)).getUrl()));
+                        .statusBarColor(ContextCompat.getColor(getActivity(), R.color.primaryDarkColor))
+                        .show(Check.checkReplace(((IndexDataModel) adapter.getData().get(position)).getUrl()));
             }
         });
     }
 
     @Override
     protected void initData() {
-        getBasePresenter().getIndexNews("10");
+       mSwipeRefreshLayout.setRefreshing(true);
+       getBasePresenter().getIndexNews("10");
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
     }
-
 
 
     public void onButtonPressed(Uri uri) {
@@ -141,7 +149,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
 
     @Override
     public void hideLoading() {
-
+        if (mSwipeRefreshLayout.isRefreshing()) {
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
     }
 
     @Override
@@ -156,7 +166,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
 
     @Override
     public void showError(String message) {
-
+        mErrorView.setSubtitle(message);
     }
 
     @Override
@@ -165,22 +175,30 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     }
 
 
-
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        unbinder.unbind();
     }
 
     @Override
     public void showIndexNewList(List<IndexDataModel> models) {
-        if (null != mHomeRv && models.size()>0){
+        if (null != mHomeRv && models.size() > 0) {
             BaseQuickAdapter adapter = (BaseQuickAdapter) mHomeRv.getAdapter();
             adapter.setNewData(models);
+            mErrorView.setVisibility(View.GONE);
         }
-        if (mSwipeRefreshLayout.isRefreshing()){
+        if (mSwipeRefreshLayout.isRefreshing()) {
             mSwipeRefreshLayout.setRefreshing(false);
         }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
     }
 
     public interface HomeFListener {

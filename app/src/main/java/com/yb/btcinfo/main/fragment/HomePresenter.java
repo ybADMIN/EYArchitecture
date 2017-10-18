@@ -1,11 +1,10 @@
 package com.yb.btcinfo.main.fragment;
 
-import android.widget.Toast;
-
 import com.yb.btcinfo.common.exception.ErrorMessageFactory;
 import com.yb.btcinfo.main.model.mapper.UserModelDataMapper;
 import com.yb.btcinfo.repository.impl.MainRepostiory;
 import com.yb.btcinfo.repository.manager.RepositoryManager;
+
 import mvp.data.net.converter.RetryWhenHandler;
 import mvp.presenter.Presenter;
 
@@ -25,17 +24,18 @@ public class HomePresenter extends Presenter<HomeView> {
 
     public void getIndexNews(String number) {
         addDisposable(mRepository.getIndexNews(number)
-                .retryWhen(new RetryWhenHandler(5)).subscribe(indexDataModels ->
-        {
-            if (!isNullView()) {
-                getView().showIndexNewList(indexDataModels);
-            }
-        }, throwable -> {
-            if (!isNullView()) {
-                Toast.makeText(getView().context(),
-                        ErrorMessageFactory.create(getView().context(), throwable), Toast.LENGTH_SHORT).show();
-            }
-        }));
+                .retryWhen(new RetryWhenHandler(3)).subscribe(indexDataModels ->
+                {
+                    if (!isNullView()) {
+                        getView().hideLoading();
+                        getView().showIndexNewList(indexDataModels);
+                    }
+                }, throwable -> {
+                    if (!isNullView()) {
+                        getView().hideLoading();
+                        getView().showError(ErrorMessageFactory.create(getView().context(), throwable));
+                    }
+                }));
     }
 
 
