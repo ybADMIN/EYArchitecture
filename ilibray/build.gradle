@@ -1,12 +1,11 @@
 apply plugin: 'com.android.library'
 android {
-    def globalConfiguration = rootProject.extensions.getByName("ext")
-    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
-    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        minSdkVersion globalConfiguration["androidMinSdkVersion"]
-        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -25,26 +24,26 @@ android {
     }
 }
 dependencies {
-    def baseDependencies = rootProject.ext.baseDependencies
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
-    compile baseDependencies.logger
-    compile baseDependencies.rxJava
-    compile baseDependencies.okHttp
-    compile baseDependencies.retrofit
-    compile baseDependencies.loggerInterceptor
-    compile baseDependencies.adapterRxjava
-    compile baseDependencies.gson
-    compile baseDependencies.rxAndroid
-    compile baseDependencies.androidAnnotations
-    compile baseDependencies.rxCache
-    compile baseDependencies.rxCacheToGson
-    compile baseDependencies.glide
-    annotationProcessor baseDependencies.glidecompiler
-    provided baseDependencies.v4compat
-    provided baseDependencies.recyclerView
-    compile baseDependencies.glideIntegration
+    androidTestImplementation deps.junit
+    compile deps.logger
+    compile deps.rxJava.core
+    compile deps.rxJava.rxAndroid
+    compile deps.rxJava.rxCache
+    compile deps.rxJava.rxCacheToGson
+    compile deps.okhttp.core
+    compile deps.okhttp.logger
+    compile deps.retrofit.core
+    compile deps.retrofit.adapter
+    compile deps.glide.core
+    annotationProcessor deps.glide.glidecompiler
+    compile deps.glide.integration
+
+    implementation deps.gson
+    provided deps.support.recyclerview
+    provided deps.support.v4
+    androidTestImplementation deps.support.annotations
 }

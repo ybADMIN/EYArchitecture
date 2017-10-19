@@ -4,18 +4,18 @@ apply from: './dependencies.gradle'
 ext {
     PUBLISH_GROUP_ID = 'com.afollestad.material-dialogs'
     PUBLISH_ARTIFACT_ID = 'core'
-    PUBLISH_VERSION = versions.publishVersion
+    PUBLISH_VERSION = versions_md.publishVersion
 }
 
 android {
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.buildTools
+    compileSdkVersion versions_md.compileSdk
+    buildToolsVersion versions_md.buildTools
 
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.compileSdk
-        versionCode versions.publishVersionCode
-        versionName versions.publishVersion
+        minSdkVersion versions_md.minSdk
+        targetSdkVersion versions_md.compileSdk
+        versionCode versions_md.publishVersionCode
+        versionName versions_md.publishVersion
         consumerProguardFiles 'progress-proguard.txt'
     }
     lintOptions {
@@ -31,11 +31,11 @@ android {
 }
 
 dependencies {
-    provided 'com.android.support:support-annotations:' + versions.supportLib
-    provided 'com.android.support:support-v13:' + versions.supportLib
-    provided 'com.android.support:appcompat-v7:' + versions.supportLib
-    provided 'com.android.support:recyclerview-v7:' + versions.supportLib
-    implementation 'me.zhanghai.android.materialprogressbar:library:' + versions.mdProgressBar
+    provided deps.support.v13
+    provided deps.support.annotations
+    provided deps.support.app_compat
+    provided deps.support.recyclerview
+    implementation 'me.zhanghai.android.materialprogressbar:library:' + versions_md.mdProgressBar
 }
 
 //apply from: 'https://raw.githubusercontent.com/afollestad/aidanfollestad.com/master/android-lib-release.gradle'

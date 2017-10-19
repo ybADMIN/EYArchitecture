@@ -2,19 +2,19 @@ import java.security.InvalidKeyException
 
 apply plugin: 'com.android.application'
 android {
-    def globalConfiguration = rootProject.extensions.getByName("ext")
     flavorDimensions "dev"
-    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
-    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        minSdkVersion globalConfiguration["androidMinSdkVersion"]
-        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
-        applicationId globalConfiguration["androidApplicationId"]
-        versionCode globalConfiguration["androidVersionCode"]
-        versionName globalConfiguration["androidVersionName"]
-        testInstrumentationRunner globalConfiguration["testInstrumentationRunner"]
-        testApplicationId globalConfiguration["testApplicationId"]
+        testApplicationId = 'com.yb.btcinfo'
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        applicationId 'com.yb.btcinfo'
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        testApplicationId 'com.yb.btcinfo.test'
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86_64"
         }
@@ -107,29 +107,32 @@ def getApkCreateDate() {
 }
 
 dependencies {
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation deps.constraint_layout
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
-    def appDependencies = rootProject.ext.appDependencies
-    compile appDependencies.butterKnife
-    compile appDependencies.rxpermissions
-    compile appDependencies.recyclerView
-    compile appDependencies.v7compat
-    compile appDependencies.design
-    compile appDependencies.drawable_vector
-    compile appDependencies.barlibrary
-    compile appDependencies.v4compat
-    compile appDependencies.tablelayout
-    compile appDependencies.rvAdapter
-    compile appDependencies.getuiSDK
-    compile appDependencies.huaweiPush
+
+    debugImplementation deps.debug_db
+
+    implementation deps.butterKnife.core
+    annotationProcessor deps.butterKnife.compiler
+    implementation deps.rxJava.rxpermissions
+    implementation deps.support.recyclerview
+    implementation deps.support.app_compat
+    implementation deps.support.design
+    implementation deps.support.v4
+    implementation deps.support.drawable_vector
+    implementation deps.barlibrary
+    implementation deps.tablelayout
+    implementation deps.rvAdapter
+    implementation deps.getuiSDK
+    implementation deps.huaweiPush
+    implementation deps.finestwebview
+
     compile project(':ilibray')
     implementation project(':MaterialDialogCore')
-    compile 'com.thefinestartist:finestwebview:1.2.7'
-    annotationProcessor appDependencies.butterCompiler
-    testCompile 'junit:junit:4.12'
 
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.support.annotations
 }

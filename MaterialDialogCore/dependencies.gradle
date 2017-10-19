@@ -1,14 +1,11 @@
-def globalConfiguration = rootProject.extensions.getByName("ext")
-ext.versions = [
-        minSdk            : globalConfiguration["androidMinSdkVersion"],
-        compileSdk        : globalConfiguration["androidCompileSdkVersion"],
-        buildTools        : globalConfiguration["androidBuildToolsVersion"],
+ext.versions_md = [
+        minSdk            : build_versions.min_sdk,
+        compileSdk        : build_versions.target_sdk,
+        buildTools        : build_versions.build_tools,
         publishVersion    : '0.9.4.7',
         publishVersionCode: 177,
         gradlePlugin      : '3.0.0-beta2',
         spotlessPlugin    : '3.5.1',
 
-        supportLib        : globalConfiguration["supportVersion"],
         mdProgressBar     : '1.4.1',
-        butterKnife       : '8.8.1'
 ]

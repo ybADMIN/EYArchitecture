@@ -1,95 +1,114 @@
-allprojects {
-    repositories {
-//    jcenter()
-        mavenCentral()
-    }
+
+ext.deps = [:]
+def versions = [:]
+versions.butterKnife = "8.0.1"
+versions.support = "25.3.1"
+versions.rxJava = "2.0.2"
+versions.rxAndroid = "2.0.1"
+versions.javaxAnnotation = "1.0"
+versions.javaxInject = "1"
+versions.gson = "2.8.0"
+versions.okHttp = "3.8.0"
+versions.androidAnnotations = "25.2.0"
+versions.arrow = "1.0.0"
+versions.retrofit = "2.3.0"
+versions.logger = "1.15"
+versions.rxCache = "1.8.0-2.x"
+versions.rxCacheToGson = "0.0.3"
+versions.glide = "4.0.0"
+versions.rxPermissions ="0.9.4@aar"
+versions.barlibrary ="2.2.7"
+versions.tableLayout="2.1.2@aar"
+versions.rvAdapter ="2.9.22"
+versions.getui ="2.11.1.0"
+versions.huaweiPush ="2.5.2.300"
+versions.constraint_layout ="1.0.2"
+versions.finestwebview ="1.2.7"
+//Testing
+versions.robolectric = "3.1.1"
+versions.junit = "4.12"
+versions.assertJ = "1.7.1"
+versions.mockito = "1.9.5"
+versions.dexmaker = "1.0"
+versions.espresso = "2.0"
+versions.testingSupportLib = "0.1"
+
+//Development
+versions.leakCanary = "1.3.1"
+versions.debug_db ="1.0.0"
+
+def deps = [:]
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.v13 = "com.android.support:support-v13:$versions.support"
+support.drawable_vector = "com.android.support:support-vector-drawable:${versions.support}"
+support.core_utils = "com.android.support:support-core-utils:$versions.support"
+deps.support = support
+
+def retrofit = [:]
+retrofit.core = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+//retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+deps.retrofit = retrofit
+
+
+def okhttp = [:]
+okhttp.core = "com.squareup.okhttp3:okhttp:$versions.okHttp"
+okhttp.logger = "com.squareup.okhttp3:logging-interceptor:$versions.okHttp"
+deps.okhttp = okhttp
+
+def rxJava = [:]
+rxJava.core = "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+rxJava.rxAndroid = "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
+rxJava.rxpermissions = "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxPermissions"
+rxJava.rxCache = "com.github.VictorAlbertos.RxCache:runtime:$versions.rxCache"
+rxJava.rxCacheToGson = "com.github.VictorAlbertos.Jolyglot:gson:$versions.rxCacheToGson"
+deps.rxJava = rxJava
+
+
+def glide = [:]
+glide.core = "com.github.bumptech.glide:glide:$versions.glide"
+glide.glidecompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+glide.integration = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+deps.glide = glide
+
+
+def butterKnife = [:]
+butterKnife.core = "com.jakewharton:butterknife:${versions.butterKnife}"
+butterKnife.compiler = "com.jakewharton:butterknife-compiler:${versions.butterKnife}"
+deps.butterKnife = butterKnife
+
+
+deps.barlibrary = "com.gyf.barlibrary:barlibrary:${versions.barlibrary}"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:${versions.constraint_layout}"
+deps.tablelayout = "com.flyco.tablayout:FlycoTabLayout_Lib:${versions.tableLayout}"
+deps.rvAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:${versions.rvAdapter}"
+deps.getuiSDK = "com.getui:sdk:${versions.getui}"
+deps.huaweiPush = "com.huawei.android.hms:push:${versions.huaweiPush}"
+deps.logger = "com.orhanobut:logger:${versions.logger}"
+deps.gson = "com.google.code.gson:gson:${versions.gson}"
+deps.leakCanary = "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}"
+deps.debug_db = "com.amitshekhar.android:debug-db:${versions.debug_db}"
+deps.finestwebview= "com.thefinestartist:finestwebview:${versions.finestwebview}"
+deps.junit = "junit:junit:$versions.junit"
+ext.deps = deps
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url "https://jitpack.io" }//rxcache use
+    handler.maven {url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"}//rxcache use
+    handler.maven {url 'http://developer.huawei.com/repo/'}
 }
+ext.addRepos = this.&addRepos
+def build_versions = [:]
+build_versions.min_sdk = 14
+build_versions.target_sdk = 26
+build_versions.build_tools = "26.0.2"
+ext.build_versions = build_versions
 
-ext {
-    //Android
-    androidBuildToolsVersion = "26.0.2"
-    androidMinSdkVersion = 16
-    androidTargetSdkVersion = 25
-    androidCompileSdkVersion = 25
-
-    //Libraries
-//  daggerVersion = '2.8'
-    butterKnifeVersion = '8.0.1'
-    supportVersion = '25.3.1'
-    rxJavaVersion = '2.0.2'
-    rxAndroidVersion = '2.0.1'
-    javaxAnnotationVersion = '1.0'
-    javaxInjectVersion = '1'
-    gsonVersion = '2.8.0'
-    okHttpVersion = '3.8.0'
-    androidAnnotationsVersion = '25.2.0'
-    arrowVersion = '1.0.0'
-    retrofitVersion = '2.3.0'
-    loggerVersion = '1.15'
-    rxCacheVersion = '1.8.0-2.x'
-    rxCacheToGsonVersion = '0.0.3'
-    glideVersion = '4.0.0'
-    rxPermissionsVersion ='0.9.4@aar'
-    barlibraryVersion ='2.2.7'
-    tableLayoutVersion='2.1.2@aar'
-    RVAdapterVersion ='2.9.22'
-    getuiVersion ='2.11.1.0'
-    huaweiPushVersion ='2.5.2.300'
-    //Testing
-    robolectricVersion = '3.1.1'
-    jUnitVersion = '4.12'
-    assertJVersion = '1.7.1'
-    mockitoVersion = '1.9.5'
-    dexmakerVersion = '1.0'
-    espressoVersion = '2.0'
-    testingSupportLibVersion = '0.1'
-    //Development
-    leakCanaryVersion = '1.3.1'
-    appDependencies = [
-            butterKnife    : "com.jakewharton:butterknife:${butterKnifeVersion}",
-            butterCompiler : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
-    //      daggerCompiler :"com.google.dagger:dagger-compiler:${daggerVersion}",
-    //      javaxAnnotation:"javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-    //      dagger         :"com.google.dagger:dagger:${daggerVersion}",
-            recyclerView   : "com.android.support:recyclerview-v7:${supportVersion}",
-            v7compat       : "com.android.support:appcompat-v7:${supportVersion}",
-            v4compat       : "com.android.support:support-v4:${supportVersion}",
-            design         : "com.android.support:design:${supportVersion}",
-            drawable_vector: "com.android.support:support-vector-drawable:${supportVersion}",
-            rxpermissions  : "com.tbruyelle.rxpermissions2:rxpermissions:${rxPermissionsVersion}",
-            barlibrary     : "com.gyf.barlibrary:barlibrary:${barlibraryVersion}",
-            tablelayout     : "com.flyco.tablayout:FlycoTabLayout_Lib:${tableLayoutVersion}",
-            rvAdapter     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${RVAdapterVersion}",
-            getuiSDK     : "com.getui:sdk:${getuiVersion}",
-            huaweiPush   :"com.huawei.android.hms:push:${huaweiPushVersion}"
-    ]
-
-    baseDependencies = [
-            logger                 : "com.orhanobut:logger:${loggerVersion}",
-            okHttp                 : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
-            retrofit               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
-//          retrofitGson:       "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
-//          javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            loggerInterceptor      : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
-            adapterRxjava          : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
-            gson                   : "com.google.code.gson:gson:${gsonVersion}",
-            rxJava                 : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            rxAndroid              : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-//          javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
-            androidAnnotations     : "com.android.support:support-annotations:${androidAnnotationsVersion}",
-            rxCacheToGson          : "com.github.VictorAlbertos.Jolyglot:gson:${rxCacheToGsonVersion}",
-            rxCache                : "com.github.VictorAlbertos.RxCache:runtime:${rxCacheVersion}",
-            glide                  : "com.github.bumptech.glide:glide:${glideVersion}",
-            v4compat              : "com.android.support:support-v4:${supportVersion}",
-            glidecompiler          : "com.github.bumptech.glide:compiler:${glideVersion}",
-            recyclerView   : "com.android.support:recyclerview-v7:${supportVersion}",
-            glideIntegration       : "com.github.bumptech.glide:okhttp3-integration:${glideVersion}"
-//          annotationProcessor
-    ]
-
-
-    developmentDependencies = [
-            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
-    ]
-
-}

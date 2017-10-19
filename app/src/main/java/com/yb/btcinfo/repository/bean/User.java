@@ -3,7 +3,7 @@ package com.yb.btcinfo.repository.bean;
 /**
  * Created by ericYang on 2017/5/18.
  * Email:eric.yang@huanmedia.com
- * 用于数据存储
+ * 用于数据库存储 目前还没有加入数据库框架
  */
 
 public class User {
