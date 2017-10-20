@@ -2,7 +2,6 @@ import java.security.InvalidKeyException
 
 apply plugin: 'com.android.application'
 android {
-    flavorDimensions "dev"
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
 
@@ -16,7 +15,7 @@ android {
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         testApplicationId 'com.yb.btcinfo.test'
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+            abiFilters "armeabi", "armeabi-v7a", "x86_64","x86"
         }
         manifestPlaceholders = [
                 GETUI_APP_ID    : "UZJSQQqbzX8hwQRbmp9z34",
@@ -58,13 +57,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 //    buildTypeMatching 'debug', 'release'
-
+    flavorDimensions "dev"
     productFlavors {
-        development {
+        dev {
             dimension "dev"
             resConfigs "xxhdpi"
         }
-        production {
+        prod {
             dimension "dev"
         }
     }
@@ -92,10 +91,10 @@ android {
 android.applicationVariants.all { variant ->
     variant.outputs.all {
         if (variant.buildType.name.equals('debug')) {
-            outputFileName = "framMVP-${variant.name}-t${variant.versionName}-${variant.versionCode}.apk"
+            outputFileName = "EYarchitecture-${variant.name}-t${variant.versionName}-${variant.versionCode}.apk"
         }
         if (variant.buildType.name.equals('release')) {
-            outputFileName = "framMVP-${variant.name}-v${variant.versionName}-${variant.versionCode}-${getApkCreateDate()}.apk"
+            outputFileName = "EYarchitecture-${variant.name}-v${variant.versionName}-${variant.versionCode}-${getApkCreateDate()}.apk"
         }
     }
 }
@@ -130,9 +129,15 @@ dependencies {
     implementation deps.huaweiPush
     implementation deps.finestwebview
 
-    compile project(':ilibray')
+    testImplementation deps.mockito.core
+//    testCompile deps.mockito.all
+    testCompile deps.junit
+
+    androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
+    androidTestImplementation deps.dexmaker
+
+    implementation project(':ilibray')
     implementation project(':MaterialDialogCore')
 
-    androidTestImplementation deps.junit
-    androidTestImplementation deps.support.annotations
+    implementation deps.support.annotations
 }

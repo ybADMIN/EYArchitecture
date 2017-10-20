@@ -5,12 +5,12 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.MediumTest;
 import android.support.test.runner.AndroidJUnit4;
 
-import mvp.data.download.down.DownLoadManager;
-import mvp.data.download.down.entity.DownloadEntity;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import mvp.data.download.down.DownLoadManager;
+import mvp.data.download.down.entity.DownloadEntity;
 
 /**
  * Created by ericYang on 2017/6/15.
@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
 @MediumTest
 public class DownLoadManagerTest {
     private Context instrumentationCtx;
-
     @Before
     public void setup() {
         instrumentationCtx = InstrumentationRegistry.getContext();

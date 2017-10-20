@@ -28,11 +28,11 @@ versions.finestwebview ="1.2.7"
 versions.robolectric = "3.1.1"
 versions.junit = "4.12"
 versions.assertJ = "1.7.1"
-versions.mockito = "1.9.5"
-versions.dexmaker = "1.0"
-versions.espresso = "2.0"
+versions.dexmaker = "2.2.0"
+versions.espresso = "3.0.1"
 versions.testingSupportLib = "0.1"
-
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
 //Development
 versions.leakCanary = "1.3.1"
 versions.debug_db ="1.0.0"
@@ -84,6 +84,19 @@ butterKnife.compiler = "com.jakewharton:butterknife-compiler:${versions.butterKn
 deps.butterKnife = butterKnife
 
 
+def espresso = [:]
+espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+deps.espresso = espresso
+
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+deps.mockito = mockito
+
+deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
 deps.barlibrary = "com.gyf.barlibrary:barlibrary:${versions.barlibrary}"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:${versions.constraint_layout}"
 deps.tablelayout = "com.flyco.tablayout:FlycoTabLayout_Lib:${versions.tableLayout}"

@@ -55,7 +55,6 @@ public class MainActivity extends BaseActivity implements HomeFListener, Platfor
 //        PushManager.getInstance().registerPushIntentService(this.getApplicationContext(), DemoIntentService.class);//启动推送服务
         mRxPrmissions = new RxPermissions(this);
 //        addFragmentAndShow(R.id.content, HomeFragment.newInstance(), "home");
-
     }
 
     private void initPushService() {

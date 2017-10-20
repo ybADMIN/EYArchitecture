@@ -28,22 +28,23 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestImplementation deps.junit
-    compile deps.logger
-    compile deps.rxJava.core
-    compile deps.rxJava.rxAndroid
-    compile deps.rxJava.rxCache
-    compile deps.rxJava.rxCacheToGson
-    compile deps.okhttp.core
-    compile deps.okhttp.logger
-    compile deps.retrofit.core
-    compile deps.retrofit.adapter
-    compile deps.glide.core
+    api deps.logger
+    api deps.rxJava.core
+    api deps.rxJava.rxAndroid
+    api deps.rxJava.rxCache
+    api deps.rxJava.rxCacheToGson
+    api deps.okhttp.core
+    api deps.okhttp.logger
+    api deps.retrofit.core
+    api deps.retrofit.adapter
+    api deps.glide.core
     annotationProcessor deps.glide.glidecompiler
-    compile deps.glide.integration
+    api deps.glide.integration
 
-    implementation deps.gson
+    api deps.gson
     provided deps.support.recyclerview
     provided deps.support.v4
-    androidTestImplementation deps.support.annotations
+
+    testCompile deps.junit
+    implementation deps.support.annotations
 }
