@@ -2,13 +2,13 @@ package com.yb.btcinfo.repository.local;
 
 import android.content.Context;
 
-import com.yb.btcinfo.repository.UseDataSource;
+import com.yb.btcinfo.repository.datasouce.UseDataSource;
 import com.yb.btcinfo.repository.bean.User;
-import mvp.data.download.down.entity.DownloadEntity;
 
 import java.util.List;
 
 import io.reactivex.Observable;
+import mvp.data.download.down.entity.DownloadEntity;
 
 /**
  * Created by ericYang on 2017/5/18.

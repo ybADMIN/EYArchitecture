@@ -1,4 +1,4 @@
-package com.yb.btcinfo.repository;
+package com.yb.btcinfo.repository.datasouce;
 
 import com.yb.btcinfo.main.model.IndexDataModel;
 import com.yb.btcinfo.main.model.PlatformModel;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.repository;
+package com.yb.btcinfo.repository.datasouce;
 
 
 import com.yb.btcinfo.repository.bean.User;

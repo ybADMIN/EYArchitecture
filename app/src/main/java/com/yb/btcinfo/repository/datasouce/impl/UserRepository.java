@@ -1,12 +1,11 @@
-package com.yb.btcinfo.repository.impl;
+package com.yb.btcinfo.repository.datasouce.impl;
 
 
-import android.content.Context;
-
-import com.yb.btcinfo.repository.UseDataSource;
+import com.yb.btcinfo.common.FApplication;
+import com.yb.btcinfo.common.manager.ResourceManager;
 import com.yb.btcinfo.repository.bean.User;
+import com.yb.btcinfo.repository.datasouce.UseDataSource;
 import com.yb.btcinfo.repository.local.LocalUserDataSource;
-import com.yb.btcinfo.repository.net.UserApiService;
 import com.yb.btcinfo.repository.net.UserCacheProviders;
 import com.yb.btcinfo.repository.remote.RemoteUserDataSource;
 
@@ -35,16 +34,12 @@ public class UserRepository implements UseDataSource {
     /**
      * create user repository
      *
-     * @param context        context
-     * @param apiService     remote api
-     * @param cacheProviders cache providers
-     * @param threadHandler  default thread dispatch
      */
-    public UserRepository(Context context, UserApiService apiService, UserCacheProviders cacheProviders, DefaultThreadProvider threadHandler) {
-        this.mThreadHandler = threadHandler;
-        this.mRemoteDataSource = new RemoteUserDataSource(apiService);
-        this.mLocalDataSource = new LocalUserDataSource(context);
-        this.mCacheProviders = cacheProviders;
+    public UserRepository() {
+        this.mThreadHandler = ResourceManager.getInstance().getDefaultThreadProvider();
+        this.mRemoteDataSource = new RemoteUserDataSource( ResourceManager.getInstance().getUserApiService());
+        this.mLocalDataSource = new LocalUserDataSource(FApplication.getApplication());
+        this.mCacheProviders = ResourceManager.getInstance().getUserCacheProviders();
     }
 
     public Observable<List<User>> users() {

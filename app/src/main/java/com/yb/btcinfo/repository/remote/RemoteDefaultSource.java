@@ -6,7 +6,7 @@ import com.yb.btcinfo.main.model.mapper.IndexModelDataMapper;
 import com.yb.btcinfo.main.model.mapper.PlatformModelDataMapper;
 import com.yb.btcinfo.platform.mode.PlatformListMode;
 import com.yb.btcinfo.platform.mode.mapper.PlatformListModelDataMapper;
-import com.yb.btcinfo.repository.MainSource;
+import com.yb.btcinfo.repository.datasouce.MainSource;
 import com.yb.btcinfo.repository.net.RemoteApiService;
 
 import java.util.ArrayList;

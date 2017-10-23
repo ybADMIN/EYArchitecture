@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.repository;
+package com.yb.btcinfo.repository.datasouce;
 
 
 import com.yb.btcinfo.repository.bean.User;
@@ -25,7 +25,7 @@ import io.reactivex.Observable;
 /**
  * Interface that represents a UserRepository for getting {@link User} related data.
  */
-public interface UseDataSource extends DataSource{
+public interface UseDataSource extends DataSource {
     /**
      * Get an {@link Observable} which will emit a List of {@link User}.
      */

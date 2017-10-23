@@ -3,8 +3,7 @@ package com.yb.btcinfo.platform;
 import android.widget.Toast;
 
 import com.yb.btcinfo.common.exception.ErrorMessageFactory;
-import com.yb.btcinfo.repository.impl.MainRepostiory;
-import com.yb.btcinfo.repository.manager.RepositoryManager;
+import com.yb.btcinfo.repository.datasouce.impl.MainRepostiory;
 
 import mvp.presenter.Presenter;
 
@@ -18,7 +17,7 @@ public class PlatformMsgPresenter extends Presenter<PlatformMsgView> {
     private final MainRepostiory mRepository;
 
     public PlatformMsgPresenter() {
-        this.mRepository = (MainRepostiory) RepositoryManager.getInstance().getRepositorys(RepositoryManager.DEFAULTREPOSITORY);
+        this.mRepository = new MainRepostiory();
     }
     public void getPlatformNews(String id){
         addDisposable(mRepository.getPlatformNews(id,20+"").subscribe(platformListModes ->

@@ -1,11 +1,11 @@
-package com.yb.btcinfo.repository.impl;
+package com.yb.btcinfo.repository.datasouce.impl;
 
+import com.yb.btcinfo.common.manager.ResourceManager;
 import com.yb.btcinfo.main.model.IndexDataModel;
 import com.yb.btcinfo.main.model.PlatformModel;
 import com.yb.btcinfo.platform.mode.PlatformListMode;
-import com.yb.btcinfo.repository.DataSource;
+import com.yb.btcinfo.repository.datasouce.DataSource;
 import com.yb.btcinfo.repository.net.CacheProviders;
-import com.yb.btcinfo.repository.net.RemoteApiService;
 import com.yb.btcinfo.repository.remote.RemoteDefaultSource;
 
 import java.util.List;
@@ -27,15 +27,11 @@ public class MainRepostiory implements DataSource {
 
     /**
      * create user repository
-     *
-     * @param apiService     remote api
-     * @param cacheProviders cache providers
-     * @param threadProvider  default thread dispatch
      */
-    public MainRepostiory(RemoteApiService apiService, CacheProviders cacheProviders, DefaultThreadProvider threadProvider) {
-        this.mThreadProvider = threadProvider;
-        this.mRemoteDataSource = new RemoteDefaultSource(apiService);
-        this.mCacheProviders = cacheProviders;
+    public MainRepostiory() {
+        this.mThreadProvider = ResourceManager.getInstance().getDefaultThreadProvider();
+        this.mRemoteDataSource = new RemoteDefaultSource(ResourceManager.getInstance().getDefaultApiService());
+        this.mCacheProviders = ResourceManager.getInstance().getCacheProviders();
     }
 
     /**

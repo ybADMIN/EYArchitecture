@@ -2,8 +2,7 @@ package com.yb.btcinfo.main.fragment;
 
 import com.yb.btcinfo.common.exception.ErrorMessageFactory;
 import com.yb.btcinfo.main.model.mapper.UserModelDataMapper;
-import com.yb.btcinfo.repository.impl.MainRepostiory;
-import com.yb.btcinfo.repository.manager.RepositoryManager;
+import com.yb.btcinfo.repository.datasouce.impl.MainRepostiory;
 
 import mvp.data.net.converter.RetryWhenHandler;
 import mvp.presenter.Presenter;
@@ -19,7 +18,7 @@ public class HomePresenter extends Presenter<HomeView> {
     private UserModelDataMapper mUserModelDataMapper = new UserModelDataMapper();
 
     public HomePresenter() {
-        this.mRepository = (MainRepostiory) RepositoryManager.getInstance().getRepositorys(RepositoryManager.DEFAULTREPOSITORY);
+        this.mRepository = new MainRepostiory();
     }
 
     public void getIndexNews(String number) {
