@@ -18,8 +18,7 @@ import com.yb.ilibray.R;
 
 /**
  * Created by Administrator on 2016/11/30.
- * 还未完善功能
- * 1.设置振幅，平率 ，高度等
+ * 1.设置振幅、高度、 颜色、距离
  * 2.XML属性设置
  */
 

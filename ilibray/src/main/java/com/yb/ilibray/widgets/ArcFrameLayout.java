@@ -30,7 +30,6 @@ import java.lang.annotation.RetentionPolicy;
  * Created by ericYang on 2017/10/16.
  * Email:eric.yang@huanmedia.com
  * 圆弧形状头部 ，很多App个人中心流行效果
- * 还未完善功能:
  * 1.关闭效果，设置圆弧方向和高度，纯色圆弧等
  * 2.XML属性设置
  */

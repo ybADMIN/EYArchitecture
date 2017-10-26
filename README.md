@@ -46,6 +46,9 @@ WaveView
 ```
 3.弧形控件和波浪控件组合使用
 --------
+![](screen/layout-2017-10-26-143947.png)
+![](screen/layout-2017-10-26-144054.png)
+![](screen/layout-2017-10-26-144126.png)
 ```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
         android:id="@+id/headerArc"
