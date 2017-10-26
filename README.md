@@ -19,8 +19,8 @@ MVP RXJava 基础架构
 ```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
         android:id="@+id/headerArc"
-        wave:arc_suppert_background="false"
-        wave:arc_direction="Bottom"
+        arcl:arc_suppert_background="false"
+        arcl:arc_direction="Bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
