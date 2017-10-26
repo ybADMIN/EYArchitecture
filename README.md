@@ -9,7 +9,60 @@ MVP RXJava 基础架构
 # 弧形控件
 --------
 ArcFrameLayout 类似优酷个人中心
-
+```xml
+ <com.yb.ilibray.widgets.ArcFrameLayout
+        android:id="@+id/headerArc"
+        wave:arc_suppert_background="false"
+        wave:arc_direction="Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_my"
+            />
+    </com.yb.ilibray.widgets.ArcFrameLayout>
+```
 # 波浪控件
 --------
+```xml
+        <com.yb.ilibray.widgets.WaveView
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            wave:wave_swing="30"
+            android:layout_gravity="bottom"
+            />
+```
 WaveView
+
+弧形控件和波浪控件组合使用
+--------
+ <com.yb.ilibray.widgets.ArcFrameLayout
+        android:id="@+id/headerArc"
+        wave:arc_suppert_background="false"
+        wave:arc_direction="Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_my"
+            />
+        <ImageView
+            android:id="@+id/cloud"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="75dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/error_view_cloud"/>
+        <com.yb.ilibray.widgets.WaveView
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            wave:wave_swing="30"
+            android:layout_gravity="bottom"
+            />
+    </com.yb.ilibray.widgets.ArcFrameLayout>
