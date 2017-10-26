@@ -12,7 +12,10 @@ MVP RXJava 基础架构
 
 1.弧形控件
 --------
-ArcFrameLayout 类似优酷个人中心
+>ArcFrameLayout 类似优酷个人中心
+设置圆弧方向和高度，纯色（渐变色，裁剪填充色）圆弧等
+详细请参考 custom_attrs.xml
+
 ```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
         android:id="@+id/headerArc"
@@ -30,6 +33,7 @@ ArcFrameLayout 类似优酷个人中心
 ```
 2.波浪控件
 --------
+>1.设置振幅、高度、 颜色、距离
 WaveView
 ```xml
         <com.yb.ilibray.widgets.WaveView
