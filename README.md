@@ -26,6 +26,8 @@ ArcFrameLayout 类似优酷个人中心
 ```
 # 波浪控件
 --------
+WaveView
+
 ```xml
         <com.yb.ilibray.widgets.WaveView
             android:id="@+id/waveView"
@@ -35,7 +37,6 @@ ArcFrameLayout 类似优酷个人中心
             android:layout_gravity="bottom"
             />
 ```
-WaveView
 
 弧形控件和波浪控件组合使用
 --------
