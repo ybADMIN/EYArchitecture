@@ -28,7 +28,7 @@ ArcFrameLayout 类似优酷个人中心
             />
     </com.yb.ilibray.widgets.ArcFrameLayout>
 ```
-2. 波浪控件
+2.波浪控件
 --------
 WaveView
 ```xml
