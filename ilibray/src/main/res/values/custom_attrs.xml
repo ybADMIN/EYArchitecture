@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--个人中心圆弧控件-->
+    <declare-styleable name="ArcFrameLayout">
+        <attr name="arc_hight" format="dimension"/>
+        <attr name="arc_direction" format="enum">
+            <enum name="Bottom" value="0"/>
+            <enum name="Top" value="1"/>
+        </attr>
+        <attr name="arc_startColor" format="color"/>
+        <attr name="arc_endColor" format="color"/>
+        <attr name="arc_suppert_background" format="boolean"/>
+        <attr name="arc_clip_color" format="color"/>
+    </declare-styleable>
+    <!--波形动画-->
+    <declare-styleable name="WaveView">
+       <attr name="wave_swing" format="float"/>
+       <attr name="wave_k1" format="float"/>
+       <attr name="wave_k2" format="float"/>
+       <attr name="wave_hight" format="dimension"/>
+    </declare-styleable>
+</resources>

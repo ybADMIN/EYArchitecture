@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseFragment;
-import com.yb.btcinfo.common.manager.ResourceManager;
+import com.yb.ilibray.widgets.WaveView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,6 +58,13 @@ public class MyFragment extends BaseFragment {
     }
 
     @Override
+    protected void initView(View view) {
+        View moveView = findViewById(R.id.cloud);
+        WaveView waveView = (WaveView) findViewById(R.id.waveView);
+        waveView.setOnWaveAnimationListener(y -> moveView.setTranslationY(-y));
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
@@ -65,6 +72,12 @@ public class MyFragment extends BaseFragment {
 
     @OnClick(R.id.my_about_ll)
     public void onViewClicked() {
-        ResourceManager.getInstance().getNavigator().navigateToAbout(getContext());
+        WaveView waveView = (WaveView) findViewById(R.id.waveView);
+        if (waveView.isShowWaveAnim()){
+            waveView.hideWaveAndim();
+        }else{
+            waveView.showWaveAnim();
+        }
+//        ResourceManager.getInstance().getNavigator().navigateToAbout(getContext());
     }
 }
