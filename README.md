@@ -39,6 +39,7 @@ WaveView
 
 弧形控件和波浪控件组合使用
 --------
+```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
         android:id="@+id/headerArc"
         wave:arc_suppert_background="false"
@@ -66,3 +67,4 @@ WaveView
             android:layout_gravity="bottom"
             />
     </com.yb.ilibray.widgets.ArcFrameLayout>
+    ```
