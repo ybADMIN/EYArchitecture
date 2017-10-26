@@ -6,8 +6,12 @@ MVP RXJava 基础架构
 不管你愿不愿意这些成本都是每个程序员迈不过的一个砍，慢慢学习不断积累才是硬道理，如果感兴趣可以尝试看一看，取长补短
 如果有什么让你深恶痛绝的还请海涵，提个Issue让我也有改进的空间
 服务器端是之前我炒币的时候做的，不过国内被封后就没有续费了逻辑一切正常可供参考
-# 弧形控件
+
+自定义控件介绍
 --------
+
+1.弧形控件
+
 ArcFrameLayout 类似优酷个人中心
 ```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
@@ -24,7 +28,7 @@ ArcFrameLayout 类似优酷个人中心
             />
     </com.yb.ilibray.widgets.ArcFrameLayout>
 ```
-# 波浪控件
+2. 波浪控件
 --------
 WaveView
 
@@ -38,7 +42,7 @@ WaveView
             />
 ```
 
-弧形控件和波浪控件组合使用
+3.弧形控件和波浪控件组合使用
 --------
 ```xml
  <com.yb.ilibray.widgets.ArcFrameLayout
