@@ -1,4 +1,4 @@
-# EYArchitecture
+EYArchitecture
 =====
 MVP RXJava 基础架构
 如今Android架构满天飞的年代，看多了就不知道怎么选择了。什么依赖注入、Mvvm、mvp等等各种辅助工具和框架思想，
