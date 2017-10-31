@@ -16,6 +16,7 @@ public class FApplication  extends Application{
     public void onCreate() {
         super.onCreate();
         mApplication=this;
+//        Takt.stock(this).seat(Seat.TOP_RIGHT).color(Color.WHITE).play();
     }
     public static Application getApplication() {
         return mApplication;
@@ -27,6 +28,7 @@ public class FApplication  extends Application{
 
     @Override
     public void onTerminate() {
+//        Takt.finish();
         super.onTerminate();
     }
 

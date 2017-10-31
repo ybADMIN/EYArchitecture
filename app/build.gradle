@@ -36,8 +36,8 @@ android {
                 storePassword KEYSTORE_PASSWORD
             }
         }
-        catch (ignored) {
-            throw new InvalidKeyException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+        catch (e) {
+            throw new InvalidKeyException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.",e)
         }
         debug {
             try {
@@ -46,8 +46,8 @@ android {
                 storeFile file('E:/key/yb.jks')
                 storePassword KEYSTORE_PASSWORD
             }
-            catch (ignored) {
-                throw new InvalidKeyException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            catch (e) {
+                throw new InvalidKeyException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.",e)
             }
         }
     }
@@ -128,6 +128,8 @@ dependencies {
     implementation deps.getuiSDK
     implementation deps.huaweiPush
     implementation deps.finestwebview
+
+//    implementation deps.takt //帧率计算
 
     testImplementation deps.mockito.core
 //    testCompile deps.mockito.all

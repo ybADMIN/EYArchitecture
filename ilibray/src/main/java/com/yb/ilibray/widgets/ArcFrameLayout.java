@@ -38,8 +38,6 @@ public class ArcFrameLayout extends FrameLayout {
 
     private Paint mPaint;
     private PointF mStartPoint, mEndPoint, mControlPoint;
-    private int mWidth;
-    private int mHeight;
     private Path mPath = new Path();
     private int mArcHeight=dip2px(10);// 圆弧高度
     private int mEndColor,mStartColor;//渐变颜色
@@ -114,10 +112,13 @@ public class ArcFrameLayout extends FrameLayout {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mWidth = w;
-        mHeight = h;
         initParms(mDirection,w,h);
     }
 

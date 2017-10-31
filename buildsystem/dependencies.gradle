@@ -33,6 +33,7 @@ versions.espresso = "3.0.1"
 versions.testingSupportLib = "0.1"
 versions.mockito = "2.7.19"
 versions.mockito_all = "1.10.19"
+versions.takt = "1.0.5"
 //Development
 versions.leakCanary = "1.3.1"
 versions.debug_db ="1.0.0"
@@ -97,6 +98,7 @@ mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
 deps.mockito = mockito
 
 deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
+deps.takt = "jp.wasabeef:takt:$versions.takt"
 deps.barlibrary = "com.gyf.barlibrary:barlibrary:${versions.barlibrary}"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:${versions.constraint_layout}"
 deps.tablelayout = "com.flyco.tablayout:FlycoTabLayout_Lib:${versions.tableLayout}"
