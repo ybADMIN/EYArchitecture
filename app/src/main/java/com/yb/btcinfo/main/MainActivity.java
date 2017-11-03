@@ -25,7 +25,7 @@ import com.yb.btcinfo.main.fragment.HomeFragment;
 import com.yb.btcinfo.main.fragment.HomeFragment.HomeFListener;
 import com.yb.btcinfo.main.fragment.MyFragment;
 import com.yb.btcinfo.main.fragment.PlatformFragment;
-import com.yb.btcinfo.main.model.TabMode;
+import com.yb.btcinfo.main.datamodel.TabMode;
 
 import java.util.ArrayList;
 

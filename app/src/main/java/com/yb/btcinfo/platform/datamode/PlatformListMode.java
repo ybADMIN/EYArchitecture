@@ -1,4 +1,4 @@
-package com.yb.btcinfo.platform.mode;
+package com.yb.btcinfo.platform.datamode;
 
 /**
  * Created by ericYang on 2017/9/11.

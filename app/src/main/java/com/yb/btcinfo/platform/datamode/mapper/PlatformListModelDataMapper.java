@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.platform.mode.mapper;
+package com.yb.btcinfo.platform.datamode.mapper;
 
-import com.yb.btcinfo.platform.mode.PlatformListMode;
+import com.yb.btcinfo.platform.datamode.PlatformListMode;
 import com.yb.btcinfo.repository.entity.PlatformListEntity;
 
 import java.util.ArrayList;

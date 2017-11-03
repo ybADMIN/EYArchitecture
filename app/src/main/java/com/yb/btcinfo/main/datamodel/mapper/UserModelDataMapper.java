@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.main.model.mapper;
+package com.yb.btcinfo.main.datamodel.mapper;
 
-import com.yb.btcinfo.main.model.UserModel;
+import com.yb.btcinfo.main.datamodel.UserModel;
 import com.yb.btcinfo.repository.bean.User;
 
 import java.util.ArrayList;

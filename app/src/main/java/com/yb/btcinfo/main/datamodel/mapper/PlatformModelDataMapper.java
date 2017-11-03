@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.main.model.mapper;
+package com.yb.btcinfo.main.datamodel.mapper;
 
-import com.yb.btcinfo.main.model.PlatformModel;
-import com.yb.btcinfo.main.model.UserModel;
+import com.yb.btcinfo.main.datamodel.PlatformModel;
+import com.yb.btcinfo.main.datamodel.UserModel;
 import com.yb.btcinfo.repository.entity.PlatformEntity;
 
 import java.util.ArrayList;
@@ -32,10 +32,10 @@ public class PlatformModelDataMapper {
   public PlatformModelDataMapper() {}
 
   /**
-   * Transform a {@link com.yb.btcinfo.repository.entity.PlatformEntity} into an {@link com.yb.btcinfo.main.model.PlatformModel}.
+   * Transform a {@link com.yb.btcinfo.repository.entity.PlatformEntity} into an {@link com.yb.btcinfo.main.datamodel.PlatformModel}.
    *
    * @param entity Object to be transformed.
-   * @return {@link com.yb.btcinfo.main.model.PlatformModel}.
+   * @return {@link com.yb.btcinfo.main.datamodel.PlatformModel}.
    */
   public PlatformModel transform(PlatformEntity entity) {
     if (entity == null) {
@@ -49,10 +49,10 @@ public class PlatformModelDataMapper {
   }
 
   /**
-   * Transform a Collection of {@link com.yb.btcinfo.repository.entity.PlatformEntity} into a Collection of {@link com.yb.btcinfo.main.model.PlatformModel}.
+   * Transform a Collection of {@link com.yb.btcinfo.repository.entity.PlatformEntity} into a Collection of {@link com.yb.btcinfo.main.datamodel.PlatformModel}.
    *
    * @param platformEntities Objects to be transformed.
-   * @return List of {@link com.yb.btcinfo.main.model.PlatformModel}.
+   * @return List of {@link com.yb.btcinfo.main.datamodel.PlatformModel}.
    */
   public List<PlatformModel> transform(List<PlatformEntity> platformEntities) {
     List<PlatformModel> platformModels;

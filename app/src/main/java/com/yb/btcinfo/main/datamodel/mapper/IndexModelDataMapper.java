@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yb.btcinfo.main.model.mapper;
+package com.yb.btcinfo.main.datamodel.mapper;
 
-import com.yb.btcinfo.main.model.IndexDataModel;
-import com.yb.btcinfo.main.model.UserModel;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.UserModel;
 import com.yb.btcinfo.repository.bean.User;
 import com.yb.btcinfo.repository.entity.IndexEntity;
 
@@ -34,10 +34,10 @@ public class IndexModelDataMapper {
   public IndexModelDataMapper() {}
 
   /**
-   * Transform a {@link com.yb.btcinfo.repository.entity.IndexEntity} into an {@link com.yb.btcinfo.main.model.IndexDataModel}.
+   * Transform a {@link com.yb.btcinfo.repository.entity.IndexEntity} into an {@link com.yb.btcinfo.main.datamodel.IndexDataModel}.
    *
    * @param index Object to be transformed.
-   * @return {@link com.yb.btcinfo.main.model.IndexDataModel}.
+   * @return {@link com.yb.btcinfo.main.datamodel.IndexDataModel}.
    */
   public IndexDataModel transform(IndexEntity index) {
     if (index == null) {

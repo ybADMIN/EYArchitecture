@@ -1,9 +1,9 @@
 package com.yb.btcinfo.repository.datasouce.impl;
 
 import com.yb.btcinfo.common.manager.ResourceManager;
-import com.yb.btcinfo.main.model.IndexDataModel;
-import com.yb.btcinfo.main.model.PlatformModel;
-import com.yb.btcinfo.platform.mode.PlatformListMode;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.PlatformModel;
+import com.yb.btcinfo.platform.datamode.PlatformListMode;
 import com.yb.btcinfo.repository.datasouce.DataSource;
 import com.yb.btcinfo.repository.net.CacheProviders;
 import com.yb.btcinfo.repository.remote.RemoteDefaultSource;

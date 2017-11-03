@@ -1,7 +1,7 @@
 package com.yb.btcinfo.main.fragment;
 
 import com.yb.btcinfo.common.exception.ErrorMessageFactory;
-import com.yb.btcinfo.main.model.mapper.UserModelDataMapper;
+import com.yb.btcinfo.main.datamodel.mapper.UserModelDataMapper;
 import com.yb.btcinfo.repository.datasouce.impl.MainRepostiory;
 
 import mvp.data.net.converter.RetryWhenHandler;

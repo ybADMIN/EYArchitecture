@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseFragment;
-import com.yb.btcinfo.main.model.PlatformModel;
+import com.yb.btcinfo.main.datamodel.PlatformModel;
 import com.yb.btcinfo.platform.PlatformMsgActivity;
 import com.yb.ilibray.utils.DisplayUtil;
 import com.yb.ilibray.utils.DividerGridItemDecoration;

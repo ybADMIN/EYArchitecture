@@ -1,4 +1,4 @@
-package com.yb.btcinfo.main.model;
+package com.yb.btcinfo.main.datamodel;
 
 /**
  * Created by ericYang on 2017/8/24.

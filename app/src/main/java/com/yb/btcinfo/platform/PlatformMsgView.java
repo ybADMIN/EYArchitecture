@@ -1,6 +1,6 @@
 package com.yb.btcinfo.platform;
 
-import com.yb.btcinfo.platform.mode.PlatformListMode;
+import com.yb.btcinfo.platform.datamode.PlatformListMode;
 import mvp.view.LoadDataView;
 
 import java.util.List;

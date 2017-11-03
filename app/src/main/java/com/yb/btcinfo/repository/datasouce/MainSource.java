@@ -1,8 +1,8 @@
 package com.yb.btcinfo.repository.datasouce;
 
-import com.yb.btcinfo.main.model.IndexDataModel;
-import com.yb.btcinfo.main.model.PlatformModel;
-import com.yb.btcinfo.platform.mode.PlatformListMode;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.PlatformModel;
+import com.yb.btcinfo.platform.datamode.PlatformListMode;
 
 import java.util.List;
 

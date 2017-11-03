@@ -1,11 +1,11 @@
 package com.yb.btcinfo.repository.remote;
 
-import com.yb.btcinfo.main.model.IndexDataModel;
-import com.yb.btcinfo.main.model.PlatformModel;
-import com.yb.btcinfo.main.model.mapper.IndexModelDataMapper;
-import com.yb.btcinfo.main.model.mapper.PlatformModelDataMapper;
-import com.yb.btcinfo.platform.mode.PlatformListMode;
-import com.yb.btcinfo.platform.mode.mapper.PlatformListModelDataMapper;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.PlatformModel;
+import com.yb.btcinfo.main.datamodel.mapper.IndexModelDataMapper;
+import com.yb.btcinfo.main.datamodel.mapper.PlatformModelDataMapper;
+import com.yb.btcinfo.platform.datamode.PlatformListMode;
+import com.yb.btcinfo.platform.datamode.mapper.PlatformListModelDataMapper;
 import com.yb.btcinfo.repository.datasouce.MainSource;
 import com.yb.btcinfo.repository.net.RemoteApiService;
 

@@ -9,6 +9,9 @@ MVP RXJava 基础架构
 
 ![](screen/img_arc.svg)
 
+项目结构图
+-------
+
 
 自定义控件介绍
 --------

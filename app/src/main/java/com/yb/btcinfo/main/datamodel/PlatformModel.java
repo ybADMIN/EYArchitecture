@@ -1,4 +1,4 @@
-package com.yb.btcinfo.main.model;
+package com.yb.btcinfo.main.datamodel;
 
 import android.os.Parcel;
 import android.os.Parcelable;

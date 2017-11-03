@@ -18,7 +18,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.thefinestartist.finestwebview.FinestWebView;
 import com.yb.btcinfo.R;
 import com.yb.btcinfo.common.BaseFragment;
-import com.yb.btcinfo.main.model.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
 import com.yb.ilibray.utils.data.assist.Check;
 import com.yb.ilibray.widgets.ErrorView;
 

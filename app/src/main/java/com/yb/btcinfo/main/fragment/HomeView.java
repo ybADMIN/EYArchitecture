@@ -1,6 +1,6 @@
 package com.yb.btcinfo.main.fragment;
 
-import com.yb.btcinfo.main.model.IndexDataModel;
+import com.yb.btcinfo.main.datamodel.IndexDataModel;
 import mvp.view.LoadDataView;
 
 import java.util.List;
