@@ -16,10 +16,8 @@
 package com.yb.btcinfo.repository.datasouce;
 
 
-import com.yb.btcinfo.repository.bean.User;
-
 /**
- * Interface that represents a UserRepository for getting {@link User} related data.
+ * Repository base interface
  */
 public interface DataSource {
 }

@@ -17,7 +17,6 @@ package com.yb.btcinfo.main.datamodel.mapper;
 
 import com.yb.btcinfo.main.datamodel.IndexDataModel;
 import com.yb.btcinfo.main.datamodel.UserModel;
-import com.yb.btcinfo.repository.bean.User;
 import com.yb.btcinfo.repository.entity.IndexEntity;
 
 import java.util.ArrayList;
@@ -54,7 +53,7 @@ public class IndexModelDataMapper {
   }
 
   /**
-   * Transform a Collection of {@link User} into a Collection of {@link IndexDataModel}.
+   * Transform a Collection of {@link IndexEntity} into a Collection of {@link IndexDataModel}.
    *
    * @param indexEntities Objects to be transformed.
    * @return List of {@link IndexDataModel}.
