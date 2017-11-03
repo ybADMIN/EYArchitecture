@@ -13,7 +13,8 @@ import mvp.data.download.down.entity.DownloadEntity;
 /**
  * Created by ericYang on 2017/5/18.
  * Email:eric.yang@huanmedia.com
- * 用户本地资源库 // FIXME: 2017/8/4 数据库功能没有加入
+ *  用户本地资源库 // FIXME: 2017/8/4 数据库功能没有加入
+ * @version 1.0
  */
 public class LocalUserDataSource implements UseDataSource{
     private final Context mContext;
@@ -29,9 +30,7 @@ public class LocalUserDataSource implements UseDataSource{
     public Observable<User> user(int userId) {
         return null;
     }
-
-    public Observable<List<DownloadEntity>> getFilelist() {
-        //no use
+    public Observable<List<DownloadEntity>> getFilelist() {//no use
         return null;
     }
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 import mvp.data.download.down.entity.DownloadEntity;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -18,7 +18,14 @@ import static org.mockito.Mockito.verify;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        int s=255;
+        int k = 99;
+        k= s^ k^(s=k);
+//        k ^=s;
+//        s ^= k;
+//        k ^= s;
+        System.out.println("x ^= y; y ^= x; x ^= y;");
+        System.out.println(String.format("k%s: s%s:",k,s));
     }
     @Test
     public void verify_behaviour(){
@@ -41,10 +48,11 @@ public class ExampleUnitTest {
 
         verify(downloadEntity).setUrl(url);
         verify(downloadEntity).setMethod("GET");
-        try {
-            Thread.sleep(2000*10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+//        try {
+//            Thread.sleep(2000*10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }
